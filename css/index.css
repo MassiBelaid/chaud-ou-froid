@@ -1,0 +1,40 @@
+body{
+	background-color: #b0ffea;
+	display: flex;
+	justify-content: center;
+}
+
+.information{
+	color: #292a2a;
+	align-self: flex-end;
+	font-size: 35px;
+}
+
+.informationChaud{
+	color: #ff0303;
+	align-self: flex-end;
+	font-size: 35px;
+}
+
+.informationFroid{
+	color: #1086fc;
+	align-self: flex-end;
+	font-size: 35px;
+}
+
+.informationMoyen{
+	color: #652cf0;
+	align-self: flex-end;
+	font-size: 35px;
+}
+
+.informationTrouve{
+	color: #faf200;
+	align-self: flex-end;
+	font-size: 35px;
+}
+
+.footer{
+	position: absolute;
+	bottom: 0px;
+}
