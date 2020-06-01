@@ -1,4 +1,5 @@
-
+var jeux = "notFinish";
+var nbCoups = 0;
 
 var img = document.createElement("img");
 img.src = "../images/chaton.png";
@@ -26,25 +27,29 @@ function getPositionAtCenter(element) {
 
 
 function updateWithMsg(distance){
-	//document.getElementById("info").textContent = msg;
-	var textElet = document.getElementById("info");
-	if(distance == 0){
-	   textElet.textContent = "TROUVE FELECITATION !";
-		textElet.className = "informationTrouve";
-		var imgTrouve = document.getElementById("imageATrouver");
-		imgTrouve.style.opacity = "1.0";
-	   }
-	else if(distance < 175){
-		textElet.textContent = "Chaud";
-		textElet.className = "informationChaud";
-	}else if (distance < 300){
-			  textElet.textContent = "tiède";
-		textElet.className = "informationMoyen";
-			  }else{
-				  textElet.textContent = "froid";
-				  textElet.className = "informationFroid";
-			  }
-		
+	if(jeux === "notFinish"){
+		nbCoups++;
+		//document.getElementById("info").textContent = msg;
+		var textElet = document.getElementById("info");
+		if(distance == 0){
+			jeux = "finish";
+			textElet.textContent = "TROUVE FELECITATION ! "+nbCoups+" clicks.";
+			textElet.className = "informationTrouve";
+			var imgTrouve = document.getElementById("imageATrouver");
+			imgTrouve.style.opacity = "1.0";
+			createRejouer();
+		   }
+		else if(distance < 175){
+			textElet.textContent = "Chaud";
+			textElet.className = "informationChaud";
+		}else if (distance < 300){
+				  textElet.textContent = "tiède";
+			textElet.className = "informationMoyen";
+				  }else{
+					  textElet.textContent = "froid";
+					  textElet.className = "informationFroid";
+				  }
+			}
 	
 }
 
@@ -76,5 +81,13 @@ document.getElementById("imageATrouver").addEventListener("click", function (e) 
 	console.log("fffff");
     e.stopPropagation();
 });
+
+function createRejouer(){
+	var replayElt = document.createElement("a");
+	replayElt.textContent = "Rejouer !";
+	replayElt.href = "index.html";
+	replayElt.className = "replay";
+	document.body.insertBefore(replayElt,document.getElementById("ecran"));
+}
 
 

@@ -38,3 +38,9 @@ body{
 	position: absolute;
 	bottom: 0px;
 }
+
+.replay{
+	position: absolute;
+	top: 50%;
+	font-size: 50px;
+}
